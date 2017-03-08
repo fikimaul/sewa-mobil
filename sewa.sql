@@ -35,18 +35,6 @@ CREATE TABLE `bayar` (
   `kurang` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `bayar`
---
-
-INSERT INTO `bayar` (`id_bayar`, `id_sewa`, `tgl_bayar`, `status_bayar`, `total_bayar`, `kurang`) VALUES
-(8, 12, '2016-12-13', 'Lunas', 590000, 0),
-(9, 13, '2016-12-14', 'Lunas', 350000, 0),
-(10, 14, '2017-01-17', 'Lunas', 410000, 0),
-(11, 15, '2017-01-18', 'Lunas', 650000, 0),
-(12, 16, '2017-01-18', 'Lunas', 950000, 0);
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `jaminan`
@@ -59,18 +47,6 @@ CREATE TABLE `jaminan` (
   `atas_nama` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `jaminan`
---
-
-INSERT INTO `jaminan` (`id_jaminan`, `jenis_jaminan`, `no_jaminan`, `atas_nama`) VALUES
-(14, 'STNK Motor', 'kSJNDaj', 'amsda'),
-(15, 'STNK Motor', '12345667', 'yoga'),
-(16, 'KTP', 'lkajdkansd', 'AAa'),
-(17, 'STNK Motor', 'AKN1231', 'Edi S'),
-(18, 'KTP', '108965435789865', 'DIAN');
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `mobil`
@@ -86,18 +62,6 @@ CREATE TABLE `mobil` (
   `harga` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `mobil`
---
-
-INSERT INTO `mobil` (`id_mobil`, `no_polisi`, `merek`, `jenis`, `warna`, `status_mobil`, `harga`) VALUES
-(1, 'AB 7777 OM', 'Avansa', 'Manual', 'Hitam', 'Tidak Disewa', 10000),
-(2, 'B 1000 AM', 'Kijang', 'Manual', 'Biru', 'Tidak Disewa', 15000),
-(5, 'AB 4444 NG', 'JAZZ', 'Matic', 'HITAM', 'Tidak Disewa', 25000),
-(7, 'AB 1234 JJ', 'Avansa', 'Matic', 'Hitam', 'Tidak Disewa', 10000),
-(8, 'AB 4321 RI', 'MOBILIO', 'Manual', 'PUTIH', 'Tidak Disewa', 25000);
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `pengembalian`
@@ -111,19 +75,6 @@ CREATE TABLE `pengembalian` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pengembalian`
---
-
-INSERT INTO `pengembalian` (`id_pengembalian`, `id_sewa`, `tgl_kembali`, `denda`) VALUES
-(9, 12, '2016-12-13', 200000),
-(10, 13, '2016-12-14', 0),
-(11, 14, '2017-01-17', 0),
-(12, 15, '2017-01-18', 0),
-(13, 16, '2017-01-18', 0);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `penyewa`
 --
 
@@ -134,19 +85,6 @@ CREATE TABLE `penyewa` (
   `notlp_penyewa` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `penyewa`
---
-
-INSERT INTO `penyewa` (`id_penyewa`, `nama_penyewa`, `alamat_penyewa`, `notlp_penyewa`) VALUES
-(1, 'Fiki Maulana', 'Gunungkidul', '085743036496'),
-(2, 'Dahlia', 'Manado', '023423423'),
-(3, 'edha', 'yogya', '085788123411'),
-(4, 'yoga', 'jogja', '1234567'),
-(5, 'Edi', 'Kulonprogo', '0203010'),
-(6, 'DIAN', 'YOGYAKARTA', '085788432567');
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `sewa`
@@ -164,19 +102,6 @@ CREATE TABLE `sewa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `sewa`
---
-
-INSERT INTO `sewa` (`id_sewa`, `id_mobil`, `id_penyewa`, `id_sopir`, `id_jaminan`, `tgl_sewa`, `lama_sewa`, `harga_sewa`) VALUES
-(12, 2, 2, 1, 14, '2016-12-01', 36, 590000),
-(13, 5, 4, 1, 15, '2016-12-14', 12, 350000),
-(14, 1, 1, 2, 16, '2017-01-17', 36, 410000),
-(15, 7, 5, 4, 17, '2017-01-18', 60, 650000),
-(16, 8, 6, 4, 18, '2017-01-18', 36, 950000);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `sopir`
 --
 
@@ -188,18 +113,7 @@ CREATE TABLE `sopir` (
   `status_sopir` enum('Disewa','Tidak Disewa') NOT NULL DEFAULT 'Tidak Disewa'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `sopir`
---
 
-INSERT INTO `sopir` (`id_sopir`, `nama_sopir`, `alamat_sopir`, `no_tlp_sopir`, `status_sopir`) VALUES
-(0, 'Tidak Pakai', '-', '-', 'Tidak Disewa'),
-(1, 'Suweda Rahman ', 'Lampung', '0865555555', 'Tidak Disewa'),
-(2, 'Moh Rizal', 'Palu', '0899999919', 'Tidak Disewa'),
-(3, 'eko', 'jogja', '1234567890', 'Tidak Disewa'),
-(4, 'Jono', 'Banguntapan', '0203010', 'Tidak Disewa');
-
---
 -- Indexes for dumped tables
 --
 
