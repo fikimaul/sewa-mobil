@@ -1,3 +1,11 @@
+<?php
+     if(!isset($_SESSION["nama"])){
+        header("location: login.php");
+    }else{
+        $nama = $_SESSION['nama'];
+
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,6 +40,9 @@
             </li>
             <li role="presentation">
                 <a href="#">Laporan</a>
+            </li>
+            <li role="presentation">
+                 <span align="left" class="navbar-brand">Nama : <i><?php echo $nama?></i></b>  <a href="logout.php" class="btn btn-danger btn-xs">Logout</a></span>
             </li>
         </ul>
 </div>
