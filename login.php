@@ -36,6 +36,7 @@ if (isset($_POST["login"])){
 	{	
 		session_start();
 		$_SESSION["nama"] = $username;
+		header("location: index.php");
 	}
 	else
 	{		

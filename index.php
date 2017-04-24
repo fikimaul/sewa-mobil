@@ -1,4 +1,12 @@
 <?php
+    session_start();
+
+    if(!isset($_SESSION["nama"])){
+        header("location: login.php");
+    }else{
+        $nama = $_SESSION['nama'];
+
+    }
     include_once "database/koneksi.php";
     $jenis = null;
     $tab = "mobil";
@@ -60,6 +68,10 @@
             <li role="presentation">
                 <a href="laporan.php">Laporan</a>
             </li>
+            <li role="presentation">
+                 <span align="left" class="navbar-brand">Nama : <i><?php echo $nama?></i></b>  <a href="logout.php" class="btn btn-danger btn-xs">Logout</a></span>
+            </li>
+           
         </ul>
         <?php 
             if($jenis!=null){
