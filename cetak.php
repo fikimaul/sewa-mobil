@@ -23,7 +23,7 @@
 <?php
 	$result = $kon->query("SELECT * from mobil");
 ?>
-	<table border="1" align="center" width="100%">
+	<table border="1" align="center" width="100%" >
     	<thead bgcolor='#d9edf7'>
 	    	<tr>
 	    		<th>No Polisi</th>
