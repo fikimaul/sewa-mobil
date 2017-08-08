@@ -9,6 +9,8 @@ Aplikasi ini merupakan sebuah proyek yang digunakan untuk tugas akhir matakuliah
 * Will Continoue Soon
 
 ### V 1.1-RC1
-* Add Session 
+* Add Session
 * Add Login & Logout (Use manual mode 'username : admin' 'password : admin')
 * Fix Minor Bug
+
+copy right 2016 Fiki Maulana
