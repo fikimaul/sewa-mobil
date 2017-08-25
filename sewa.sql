@@ -63,6 +63,9 @@ CREATE TABLE `sopir` (
   `status_sopir` enum('Disewa','Tidak Disewa') NOT NULL DEFAULT 'Tidak Disewa'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+INSERT INTO `sopir` (`id_sopir`, `nama_sopir`, `alamat_sopir`, `no_tlp_sopir`, `status_sopir`) VALUES
+(1, 'Tidak Ada', '-', '-', 'Tidak Disewa');
+
 ALTER TABLE `bayar`
   ADD PRIMARY KEY (`id_bayar`),
   ADD KEY `id_bayar` (`id_bayar`);
