@@ -36,10 +36,10 @@
 			<?php
 				if ($rs['status_bayar'] == "DP"){
 			?>
-			<td><a onClick="return lunasi('<?php echo $rs["penyewa"]?>', '<?php echo $rs["no_pol"]?>', '<?php echo $rs["kurang"]?>')"href="database/lunasi.php?id_bayar=<?php echo $rs['id_bayar']?>">Lunasi</a></td>
+			<td><a onClick="return lunasi('<?php echo $rs["penyewa"]?>', '<?php echo $rs["no_pol"]?>', '<?php echo $rs["kurang"]?>','lunas<?php echo $rs["id_bayar"] ?>')" href="database/lunasi.php?id_bayar=<?php echo $rs['id_bayar']?>" id="lunas<?php echo $rs['id_bayar'] ?>">Lunasi</a></td>
 			<?php }?>
 		</tr>
-<?php	
+<?php
 	$no++;
 	}
 ?>

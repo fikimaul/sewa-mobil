@@ -49,13 +49,51 @@
           	});
             return false;
         }
-        function lunasi(a,b,c){
-            hasil = confirm("Apakah Anda Yakin Akan Melunasi Penyewaan "+a+" dengan no plat : "+b+" dengan nilai kurang : Rp. "+c);
-            return hasil;
+        function lunasi(a,b,c,d){
+            var href = document.getElementById(d).href;
+            swal({
+              title: "Apakah Anda Yakin Untuk Melunasi?",
+              text: "Penyewaan "+a+" dengan no plat : "+b+" dengan nilai kurang : Rp. "+c,
+              type: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "#DD6B55",
+              confirmButtonText: "Ya",
+              cancelButtonText: "Batal",
+              closeOnConfirm: false,
+              closeOnCancel: false
+            },
+              function(isConfirm){
+                if (isConfirm) {
+                  window.location = href;
+                  return true;
+                } else {
+                swal("Batal", "Anda Membatalkan Pelunasan", "error");
+                }
+            });
+            return false;
         }
-        function Kembalikan(a,b,c){
-            hasil = confirm("Penyewaan Mobil "+b+" Dengan No Polisi : "+c+" oleh "+a+" Akan Dikembalikan!!");
-            return hasil;
+        function Kembalikan(a,b,c,d){
+          var href = document.getElementById(d).href;
+          swal({
+            title: "Penyewaan Mobil Akan Dikembalikan!!",
+            text: "Mobil "+b+" Dengan No Polisi : "+c+" oleh "+a+" Akan Dikembalikan!!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Ya",
+            cancelButtonText: "Batal",
+            closeOnConfirm: false,
+            closeOnCancel: false
+          },
+            function(isConfirm){
+              if (isConfirm) {
+                window.location = href;
+                return true;
+              } else {
+              swal("Batal", "Anda Membatalkan Pengembalian", "error");
+              }
+          });
+            return false;
         }
 
     </script>

@@ -34,9 +34,9 @@
 			<td><?php echo $rs["Atas_Nama"]?></td>
 			<td><?php echo $rs["tgl_sewa"]?></td>
 			<td><?php echo $rs["status_bayar"]?></td>
-			<td><a onClick="return Kembalikan('<?php echo $rs["Penyewa"]?>', '<?php echo $rs["Merek"]?>','<?php echo $rs["No_Polisi"]?>')" href="database/kembali.php?id_sewa=<?php echo $rs['id_sewa']?>">Kembalikan</a></td>
+			<td><a onClick="return Kembalikan('<?php echo $rs["Penyewa"]?>', '<?php echo $rs["Merek"]?>','<?php echo $rs["No_Polisi"]?>','kembali<?php echo $rs["id_sewa"]?>')" href="database/kembali.php?id_sewa=<?php echo $rs['id_sewa']?>" id="kembali<?php echo $rs['id_sewa']?>">Kembalikan</a></td>
 		</tr>
-<?php	
+<?php
 	}
 ?>
 		</tbody>
