@@ -23,10 +23,31 @@
     <link rel="stylesheet" type="text/css" href="asset/css/bootstrap.css">
     <script type="text/javascript" src="asset/js/jquery.js"></script>
     <script type="text/javascript" src="asset/js/bootstrap.js"></script>
+    <script src="asset/sweetalert/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="asset/sweetalert/sweetalert.css">
     <script type="text/javascript">
-        function hapus(a,b,c) {
-            hasil = confirm("Apakah Anda Yakin Akan Menghapus "+c+" "+b+" ("+a+")");
-            return hasil;
+        function hapus(a,b,c,d) {
+            var href = document.getElementById(d).href;
+          	swal({
+          	  title: "Apakah Anda Yakin Untuk Menghapus?",
+          	  text: c+" dengan nama "+b+" ("+a+")",
+          	  type: "warning",
+          	  showCancelButton: true,
+          	  confirmButtonColor: "#DD6B55",
+          	  confirmButtonText: "Ya",
+          	  cancelButtonText: "Batal",
+          	  closeOnConfirm: false,
+          	  closeOnCancel: false
+          	},
+          		function(isConfirm){
+          		  if (isConfirm) {
+          		  	window.location = href;
+          		    return true;
+          		  } else {
+          			swal("Batal", "Anda Membatalkan Penghapusan", "error");
+          		  }
+          	});
+            return false;
         }
         function lunasi(a,b,c){
             hasil = confirm("Apakah Anda Yakin Akan Melunasi Penyewaan "+a+" dengan no plat : "+b+" dengan nilai kurang : Rp. "+c);
@@ -36,7 +57,7 @@
             hasil = confirm("Penyewaan Mobil "+b+" Dengan No Polisi : "+c+" oleh "+a+" Akan Dikembalikan!!");
             return hasil;
         }
-    
+
     </script>
 </head>
 <body>
@@ -71,9 +92,9 @@
             <li role="presentation">
                  <span align="left" class="navbar-brand">Nama : <i><?php echo $nama?></i></b>  <a href="logout.php" class="btn btn-danger btn-xs">Logout</a></span>
             </li>
-           
+
         </ul>
-        <?php 
+        <?php
             if($jenis!=null){
                 $pesan = "null";
                 if($tab=="mobil" AND $jenis=="tbh")
@@ -92,12 +113,12 @@
                     $pesan = "Penyewaan Berhasil Dilunasi";
                 elseif($tab=="kembali" AND $jenis!=null)
                     $pesan = "Sewa Berhasil dikembalikan dengan denda Rp. ".$jenis;
-               
+
         ?>
         <div class="alert alert-success alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <p align="center"><?php echo $pesan?></p>
-        </div>   
+        </div>
         <?php }?>
     <!-- Tab panes -->
     <div class="tab-content">
@@ -140,7 +161,7 @@
         <div role="tabpanel" class="tab-pane  <?php if($tab=="bayar") echo "active" ?>" id="bayar">
             <h2 align="center">Daftar Bayar</h2>
                  <?php include_once "database/tampilBayar.php";?>
-            
+
         </div>
         <div role="tabpanel" class="tab-pane <?php if($tab=="kembali") echo "active" ?>" id="kembali">
             <h2 align="center">Pengembalian</h2>
@@ -176,8 +197,8 @@
                         <tr>
                             <td>Jenis</td>
                             <td>
-                                <input type="radio" name="jenis" value="Manual" checked> Manual 
-                                <input type="radio" name="jenis" value="Matic"> Matic 
+                                <input type="radio" name="jenis" value="Manual" checked> Manual
+                                <input type="radio" name="jenis" value="Matic"> Matic
                             </td>
                         </tr>
                         <tr>
@@ -230,11 +251,11 @@
                         <tr>
                             <td>Nomor Telpon</td>
                             <td>
-                                <input type="text"  class="form-control" name="no_tlp" required>  
+                                <input type="text"  class="form-control" name="no_tlp" required>
                             </td>
                         </tr>
                     </table>
-               
+
             </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
@@ -272,11 +293,11 @@
                         <tr>
                             <td>Nomor Penyewa</td>
                             <td>
-                                <input type="text"  class="form-control" name="no_tlp" required>  
+                                <input type="text"  class="form-control" name="no_tlp" required>
                             </td>
                         </tr>
                     </table>
-               
+
             </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
@@ -338,7 +359,7 @@
                         <tr>
                             <td>Lama Sewa</td>
                             <td>
-                                <input type="number" name="hari" value="1" required min="1"> Hari 
+                                <input type="number" name="hari" value="1" required min="1"> Hari
                                 <input type="number" name="jam" value="0" required min="0" max="24"> Jam
                             </td>
                         </tr>
@@ -348,7 +369,7 @@
                         <tr>
                             <td>Jenis Jaminan</td>
                             <td>
-                                <input type="radio" name="jenis_jaminan" value="STNK Motor" checked> STNK Motor 
+                                <input type="radio" name="jenis_jaminan" value="STNK Motor" checked> STNK Motor
                                 <input type="radio" name="jenis_jaminan" value="KTP"> KTP
                             </td>
                         </tr>
@@ -374,7 +395,7 @@
                             </td>
                         </tr>
                     </table>
-               
+
             </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>

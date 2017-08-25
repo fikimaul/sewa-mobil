@@ -1,5 +1,5 @@
 <?php
-	$kon = new mysqli('db','root','fiki','sewa');
+	$kon = new mysqli('localhost','root','','sewa');
 	if (!$kon) {
 		die('Could not connect: ' . mysqli_error($con));
 	}

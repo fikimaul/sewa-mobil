@@ -24,9 +24,9 @@
 			<td><?php echo $rs["alamat_sopir"]?></td>
 			<td><?php echo $rs["no_tlp_sopir"]?></td>
 			<td><?php echo $rs["status_sopir"]?></td>
-			<td><a href="database/hapus.php?tbl=sopir&id=<?php echo $rs['id_sopir']?>" onClick="return hapus('<?php echo $rs["no_tlp_sopir"]?>','<?php echo $rs["nama_sopir"]?>','Sopir')">Hapus</a></td>
+			<td><a href="database/hapus.php?tbl=sopir&id=<?php echo $rs['id_sopir']?>" onClick="return hapus('<?php echo $rs["id_sopir"]?>','<?php echo $rs["nama_sopir"]?>','Sopir','sopir<?php echo $rs["id_sopir"]?>')" id='sopir<?php echo $rs['id_sopir']?>'>Hapus</td>
 		</tr>
-<?php	
+<?php
 	$no++;
 	}
 ?>
