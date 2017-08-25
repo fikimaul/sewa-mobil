@@ -25,10 +25,10 @@
 			<td><?php echo $rs["warna"]?></td>
 			<td><?php echo $rs["status_mobil"]?></td>
 			<td>Rp. <?php echo $rs["harga"]?>/Jam</td>
-			<td><a href="database/hapus.php?tbl=mobil&id=<?php echo $rs['id_mobil']?>" onClick="return hapus('<?php echo $rs["no_polisi"]?>','<?php echo $rs["merek"]?>','Mobil')">Hapus</a></td>
+			<td><a href="database/hapus.php?tbl=mobil&id=<?php echo $rs['id_mobil']?>" onClick="return hapus('<?php echo $rs["no_polisi"]?>','<?php echo $rs["merek"]?>','Mobil','mobil<?php echo $rs["id_mobil"]?>')" id="mobil<?php echo $rs['id_mobil']?>">Hapus</a></td>
 		</tr>
-<?php	
-	
+<?php
+
 	}
 ?>
 		</tbody>
