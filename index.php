@@ -1,6 +1,6 @@
 <?php
     session_start();
-
+    $root = "http://localhost/sewa-mobil/";
     if(!isset($_SESSION["nama"])){
         header("location: login.php");
     }else{
@@ -41,7 +41,15 @@
           	},
           		function(isConfirm){
           		  if (isConfirm) {
-          		  	window.location = href;
+                  swal({
+                    title: "Berhasil Hapus!",
+                    type: "success",
+                    timer: 1200,
+                    showConfirmButton: false},
+                  function(){
+                        window.location = href;
+                    }
+                  );
           		    return true;
           		  } else {
           			swal("Batal", "Anda Membatalkan Penghapusan", "error");
@@ -64,8 +72,16 @@
             },
               function(isConfirm){
                 if (isConfirm) {
-                  window.location = href;
-                  return true;
+                  swal({
+                    title: "Berhasil Dilunasi!",
+                    type: "success",
+                    timer: 1200,
+                    showConfirmButton: false},
+                  function(){
+                        window.location = href;
+                    }
+                  );
+          		    return true;
                 } else {
                 swal("Batal", "Anda Membatalkan Pelunasan", "error");
                 }
@@ -87,7 +103,15 @@
           },
             function(isConfirm){
               if (isConfirm) {
-                window.location = href;
+                swal({
+                  title: "Berhasil Dikembalikan!",
+                  type: "success",
+                  timer: 1200,
+                  showConfirmButton: false},
+                function(){
+                      window.location = href;
+                  }
+                );
                 return true;
               } else {
               swal("Batal", "Anda Membatalkan Pengembalian", "error");
@@ -104,7 +128,7 @@
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
             <li role="presentation">
-                <a class="navbar-brand" href="#">Rental Mobil <b>Family</b></a>
+                <a class="navbar-brand" href="<?php echo $root ?>">Rental Mobil <b>Family</b></a>
             </li>
             <li role="presentation"  <?php if($tab=="mobil") echo "class='active'" ?>>
                 <a href="#mobil" aria-controls="mobil" role="tab" data-toggle="tab">Mobil</a>
