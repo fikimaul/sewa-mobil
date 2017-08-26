@@ -1,9 +1,14 @@
 <script type="text/javascript">
 	function cetak(){
 		document.getElementById("cetak").innerHTML="";
+    document.getElementById("kembali").innerHTML="";
 		window.print();
 		document.getElementById("cetak").innerHTML="<button onClick='cetak()'>CETAK</button>";
+    document.getElementById("kembali").innerHTML="<button onclick="kembali()">KEMBALI</button>";
 	}
+  function kembali(){
+    window.location = 'laporan.php';
+  }
 </script>
 <?php
 	include "database/koneksi.php";
@@ -46,8 +51,8 @@
 			<td><?php echo $rs["status_mobil"]?></td>
 			<td>Rp. <?php echo $rs["harga"]?>/Jam</td>
 		</tr>
-<?php	
-	
+<?php
+
 	}
 ?>
 		</tbody>
@@ -87,7 +92,7 @@
 				<td><?php echo $rs["no_tlp_sopir"]?></td>
 				<td><?php echo $rs["status_sopir"]?></td>
 			</tr>
-	<?php	
+	<?php
 		$no++;
 		}
 	?>
@@ -127,7 +132,7 @@
 				<td><?php echo $rsPenyewa["alamat_penyewa"]?></td>
 				<td><?php echo $rsPenyewa["notlp_penyewa"]?></td>
 			</tr>
-	<?php	
+	<?php
 		$no++;
 		}
 	?>
@@ -183,7 +188,7 @@
 				<td><?php echo $rs["lama_sewa"]?> Jam</td>
 				<td><?php echo $rs["harga_sewa"]?></td>
 			</tr>
-	<?php	
+	<?php
 		}
 	?>
 		</tbody>
@@ -237,7 +242,7 @@
 				<td><?php echo $rs["total_bayar"]?></td>
 				<td><?php echo $rs["kurang"]?></td>
 			</tr>
-	<?php	
+	<?php
 		$no++;
 		}
 	?>
@@ -288,7 +293,7 @@
 				<td><?php echo $rs["tgl_sewa"]?></td>
 				<td><?php echo $rs["status_bayar"]?></td>
 			</tr>
-	<?php	
+	<?php
 		}
 	?>
 			</tbody>
@@ -300,3 +305,4 @@
 <div align="center" id="cetak">
 	<button onClick="cetak()">CETAK</button>
 </div>
+<p align="center" id="kembali"><button onclick="kembali()">KEMBALI</button></p>
